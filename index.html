@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valorant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <table class="table" style="padding: 4%;">
+            <tr>
+                <td><a href="index.html" alt="Home"><image src="Home.jpg" alt="Home" style="width: 50px; height: auto;"></image></a></td>
+                <td><a href="Agents.html"><image src="agents.png" alt="Agents" style="width: 70px; height: auto;"></image></a></td>
+                <td><a href="weapons.html"><image src="weapons.png" alt="Weapons" style="width: 70px; height: auto;padding-top: 2%;"></image></a></td>
+                <td><a href="https://playvalorant.com/en-us/download/"><img src="punch.png" alt="play Valorant!!" style="width: 50px; height: auto;"></a></td>
+            </tr>
+        </table>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Valorant<image src="home.jpg" alt="logo" style="width: 70px; height: auto; padding-left:20px;"></image></h1>
+                    <p>Valorant is a team-based first-person tactical hero shooter set in the near future.Players play as one of a set of Agents, characters based on several countries and cultures around the world.In the main game mode, players are assigned to either the attacking or defending team with each team having five players on it. Agents have unique abilities, each requiring charges, as well as a unique ultimate ability that requires charging through kills, deaths, orbs, or objectives. Every player starts each round with a "classic" pistol and one or more "signature ability" charges. Other weapons and ability charges can be purchased using an in-game economic system that awards money based on the outcome of the previous round, any kills the player is responsible for, and any objectives completed.</p>
+                    <p>The game has an assortment of weapons including secondary guns like sidearms and primary guns like submachine guns, shotguns, machine guns, assault rifles and sniper rifles.There are automatic and semi-automatic weapons that each have a unique shooting pattern that has to be controlled by the player to be able to shoot accurately.As of February 2024, the game offers 26 agents to choose from.Five agents are unlocked at account creation, with the rest unlocked using an in-game currency called Kingdom Credits.</p>
+                    <p>Kingdom Credits can be acquired by playing games or completing daily and weekly tasks, and can be spent on unlocking new agents or cosmetic items. However, within the first 28 days of release, new Agents can only be unlocked with Valorant Points (VP), Agent Recruitment Events, or by having a linked and active Xbox Game Pass subscription. VP is an in-game currency that can only obtained by purchasing it with real money,and it can be spent on cosmetic items or new agents.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <h1><a href="Agents.html" style="color:red; text-decoration: none;" >Agents</a></h1>
+    <div class="slideshow-container">
+        <button class="nav-btn" id="prevBtn">&#10094;</button>
+        <div class="flashcard-slider" id="flashcardSlider">
+
+            <a href="Agents.html#jett" class="flashcard">
+                <div class="agent-image" ><image src="jett.png" style="width: 300px; height: auto;"></image></div>
+                <div class="agent-name">Jett</div>
+                <div class="agent-role">Duelist</div>
+            </a>
+            
+            <a href="Agents.html#sage" class="flashcard">
+                <div class="agent-image" ><image src="sage.png" style="width: 300px; height: auto;"></image></div>
+                <div class="agent-name">Sage</div>
+                <div class="agent-role">Sentinel</div>
+            </a>
+            
+            <a href="Agents.html#fade" class="flashcard">
+                <div class="agent-image" ><image src="fade.png" style="width: 300px; height: auto;"></image></div>
+                <div class="agent-name">Fade</div>
+                <div class="agent-role">Initiator</div>
+            </a>
+
+            <a href="Agents.html#yoru" class="flashcard">
+                <div class="agent-image" ><image src="yoru.png" style="width: 300px; height: auto;"></image></div>
+                <div class="agent-name">Yoru</div>
+                <div class="agent-role">Duelist</div>
+            </a>
+            <a href="Agents.html#reyna" class="flashcard">
+                <div class="agent-image"><image src="reyna.png" style="width: 300px; height: auto;"></image></div>
+                <div class="agent-name">Reyna</div>
+                <div class="agent-role">Duelist</div>
+            </a>
+
+            <a href="Agents.html#brimstone" class="flashcard">
+                <div class="agent-image"><image src="brimstone.png" style="width: 300px; height: auto;"></image></div>
+                <div class="agent-name">Brimstone</div>
+                <div class="agent-role">Controller</div>
+            </a>
+
+            <a href="Agents.html#omen" class="flashcard">
+                <div class="agent-image"><image src="omen.png" style="width: 300px; height: auto;"></image></div>
+                <div class="agent-name">Omen</div>
+                <div class="agent-role">Controller</div>
+            </a>
+
+            <a href="Agents.html#killjoy" class="flashcard">
+                <div class="agent-image"><image src="killjoy.png" style="width: 300px; height: auto;"></image></div>
+                <div class="agent-name">Killjoy</div>
+                <div class="agent-role">Sentinel</div>
+            </a>
+        </div>
+        <button class="nav-btn" id="nextBtn">&#10095;</button>
+    </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.flashcard');
+        const totalSlides = slides.length;
+        const slider = document.getElementById('flashcardSlider');
+
+        function showSlide(index) {
+            currentSlide = index;
+            const offset = -currentSlide * 100;
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
